@@ -11,7 +11,7 @@ node01
 kubectl drain node01 --ignore-daemonsets
 apt update
 apt-get install kubeadm=1.26.0-00
-kubeadm upgrade apply v1.26.0
+kubeadm upgrade node
 apt-get install kubelet=1.26.0-00 
 systemctl daemon-reload
 systemctl restart kubelet
