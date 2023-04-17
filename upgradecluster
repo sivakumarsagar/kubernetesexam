@@ -6,6 +6,7 @@ kubeadm upgrade apply v1.26.0
 apt-get install kubelet=1.26.0-00 
 systemctl daemon-reload
 systemctl restart kubelet
+kubectl uncordon controlplane
 
 node01
 kubectl drain node01 --ignore-daemonsets
@@ -15,3 +16,4 @@ kubeadm upgrade node
 apt-get install kubelet=1.26.0-00 
 systemctl daemon-reload
 systemctl restart kubelet
+kubectl uncordon node01
