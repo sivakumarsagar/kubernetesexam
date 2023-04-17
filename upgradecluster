@@ -9,10 +9,11 @@ systemctl restart kubelet
 kubectl uncordon controlplane
 
 node01
+ssh node01
 kubectl drain node01 --ignore-daemonsets
 apt-get update
 apt-get install kubeadm=1.26.0-00 -y
-kubeadm upgrade node
+kubeadm upgrade node (execute this command both controlplane and node01)
 apt-get install kubelet=1.26.0-00 -y
 systemctl daemon-reload
 systemctl restart kubelet
