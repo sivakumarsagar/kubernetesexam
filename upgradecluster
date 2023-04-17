@@ -1,4 +1,14 @@
-kubectl drain node controlplane --ignore-daemonsets
+Controlplane node
+kubectl drain controlplane --ignore-daemonsets
+apt update
+apt-get install kubeadm=1.26.0-00
+kubeadm upgrade apply v1.26.0
+apt-get install kubelet=1.26.0-00 
+systemctl daemon-reload
+systemctl restart kubelet
+
+node01
+kubectl drain node01 --ignore-daemonsets
 apt update
 apt-get install kubeadm=1.26.0-00
 kubeadm upgrade apply v1.26.0
